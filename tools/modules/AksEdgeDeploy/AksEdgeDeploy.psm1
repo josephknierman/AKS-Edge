@@ -726,7 +726,7 @@ function Install-AideMsi {
     $winFile = ".\AksEdgeWindows.zip"
     if ($aideConfig.AksEdgeProductUrl) {
         $url = $aideConfig.AksEdgeProductUrl
-        $urlParent = (Resolve-Path -Path $url).Path | Split-Path -Parent
+        $urlParent = Split-Path $url -Parent
         $winUrl = "$urlParent\AksEdgeWindows-*.zip"
     }
     Write-Host "Installing $reqProduct from $url"
